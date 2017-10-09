@@ -1,12 +1,26 @@
 .PHONY: clean all
+
 BINARY_NAME = sweet
 CC = g++
 
-all: main.o math.o geometry.o
-	$(CC) main.o math.o geometry.o -o $(BINARY_NAME)
+DEP_DIR = ../include
+DEP = math.h geometry.h
 
-%.o: %.cpp ../include/%.h
-	$(CC) -c $< -o $@ -I ../include
+OBJ_DIR = obj
+OBJ = main.o math.o geometry.o
+
+DEPS = $(patsubst %,$(DEP_DIR)/%,$(DEP))
+OBJS = $(patsubst %,$(OBJ_DIR)/%,$(OBJ))
+
+CFLAGS = -I$(DEP_DIR)
+
+
+all: $(OBJS)
+	$(CC) $(OBJS) -o $(BINARY_NAME)
+
+$(OBJ_DIR)/%.o: %.cpp $(DEPS) 
+	$(CC) -c $< -o $@ $(CFLAGS)
 
 clean:
-	rm -rf $(BINARY_NAME) *.o
+	rm -rf $(BINARY_NAME) $(OBJS)
+	
