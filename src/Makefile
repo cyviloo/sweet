@@ -5,7 +5,7 @@ CC = g++
 all: main.o math.o geometry.o
 	$(CC) main.o math.o geometry.o -o $(BINARY_NAME)
 
-%.o: %.cpp
+%.o: %.cpp ../include/%.h
 	$(CC) -c $< -o $@ -I ../include
 
 clean:
