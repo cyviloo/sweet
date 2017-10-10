@@ -3,22 +3,28 @@
 BINARY_NAME = ../sweet
 CC = g++
 
-DEP_DIR = ../include
-DEP = math.h geometry.h
+INC_DIR = ../include
+INC = math.h geometry.h
+
+LIBPREF_DIR = ../lib
+LIB_DIR = $(LIBPREF_DIR)/bin
+DEP_DIR = $(LIBPREF_DIR)/include
+LIB = factorial.a
 
 OBJ_DIR = obj
 OBJ = main.o math.o geometry.o
 
-DEPS = $(patsubst %,$(DEP_DIR)/%,$(DEP))
+INCS = $(patsubst %,$(INC_DIR)/%,$(INC))
 OBJS = $(patsubst %,$(OBJ_DIR)/%,$(OBJ))
+LIBS = $(patsubst %,$(LIB_DIR)/%,$(LIB))
 
-CFLAGS = -I$(DEP_DIR)
+CFLAGS = -I$(INC_DIR) -I$(DEP_DIR)
 
 
-all: echo_build $(OBJS)
-	$(CC) $(OBJS) -o $(BINARY_NAME)
+all: echo_build $(OBJS) $(LIBS)
+	$(CC) $(OBJS) $(LIBS) -o $(BINARY_NAME)
 
-$(OBJ_DIR)/%.o: %.cpp $(DEPS)
+$(OBJ_DIR)/%.o: %.cpp $(INCS) 
 	$(CC) -c $< -o $@ $(CFLAGS)
 
 echo_build:
