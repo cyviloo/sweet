@@ -1,6 +1,6 @@
 #include <iostream>
-#include "../include/geometry.h"
-#include "../include/math.h"
+#include "geometry.h"
+#include "math.h"
 using namespace std;
 
 int main(int argc, char **argv) {
