@@ -1,6 +1,6 @@
 .PHONY: clean all
 
-BINARY_NAME = sweet
+BINARY_NAME = ../sweet
 CC = g++
 
 DEP_DIR = ../include
