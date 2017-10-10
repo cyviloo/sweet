@@ -9,7 +9,7 @@ INC = math.h geometry.h
 LIBPREF_DIR = ../lib
 LIB_DIR = $(LIBPREF_DIR)/bin
 DEP_DIR = $(LIBPREF_DIR)/include
-LIB = factorial.a
+LIB = libfactorial.a
 
 OBJ_DIR = obj
 OBJ = main.o math.o geometry.o
