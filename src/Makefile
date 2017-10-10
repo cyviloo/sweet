@@ -15,10 +15,10 @@ OBJS = $(patsubst %,$(OBJ_DIR)/%,$(OBJ))
 CFLAGS = -I$(DEP_DIR)
 
 
-all: $(OBJS)
+all: echo_build $(OBJS)
 	$(CC) $(OBJS) -o $(BINARY_NAME)
 
-$(OBJ_DIR)/%.o: %.cpp $(DEPS) echo_build
+$(OBJ_DIR)/%.o: %.cpp $(DEPS)
 	$(CC) -c $< -o $@ $(CFLAGS)
 
 echo_build:
