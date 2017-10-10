@@ -1,4 +1,4 @@
-.PHONY: clean
+.PHONY: all clean
 
 all:
 	make -C src/
