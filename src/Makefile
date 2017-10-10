@@ -22,7 +22,7 @@ CFLAGS = -I$(INC_DIR) -I$(DEP_DIR)
 
 
 all: echo_build $(OBJS) $(LIBS)
-	$(CC) $(OBJS) $(LIBS) -o $(BINARY_NAME)
+	$(CC) $(OBJS) $(LIBS) -L/home/hcooh/workspace/sweet/lib/bin/ -lpower -o $(BINARY_NAME)
 
 $(OBJ_DIR)/%.o: %.cpp $(INCS) 
 	$(CC) -c $< -o $@ $(CFLAGS)
