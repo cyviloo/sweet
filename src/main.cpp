@@ -1,6 +1,6 @@
 #include <iostream>
 #include "geometry.h"
-#include "math.h"
+#include "heavy_math.h"
 
 /* We include the header of libfactorial.a ! */
 #include "factorial.h"

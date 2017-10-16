@@ -1,6 +1,6 @@
 .PHONY: all clean lib test
 
-all: lib prog
+all: lib prog test
 	
 
 prog:

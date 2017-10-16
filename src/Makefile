@@ -4,7 +4,7 @@ BINARY_NAME = ../sweet
 CC = g++
 
 INC_DIR = ../include
-INC = math.h geometry.h
+INC = heavy_math.h geometry.h
 
 LIBPREF_DIR = ../lib
 LIB_DIR = $(LIBPREF_DIR)/bin
@@ -12,7 +12,7 @@ DEP_DIR = $(LIBPREF_DIR)/include
 LIB = libfactorial.a
 
 OBJ_DIR = obj
-OBJ = main.o math.o geometry.o
+OBJ = main.o heavy_math.o geometry.o
 
 INCS = $(patsubst %,$(INC_DIR)/%,$(INC))
 OBJS = $(patsubst %,$(OBJ_DIR)/%,$(OBJ))
